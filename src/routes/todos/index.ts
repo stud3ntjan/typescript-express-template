@@ -4,6 +4,14 @@ import TodoModel from "../../database/models/TodoModel";
 
 const TodosRouter = Router();
 
+// interface Todo {
+//   id: number;
+//   task: string;
+//   isDone: boolean;
+//   dueDate: Date;
+//   userId: number;
+// }
+
 // GET REQUESTS
 // /v1/todos/bytodoid
 TodosRouter.get("/byid", async (req, res) => {
