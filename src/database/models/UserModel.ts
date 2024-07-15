@@ -1,5 +1,5 @@
-import { DataTypes, Model, Optional } from "sequelize";
-import todoSequelize from "../setup/database";
+import { DataTypes, Model, Optional } from 'sequelize';
+import todoSequelize from '../setup/database';
 
 interface UserAttributes {
   id: number;
@@ -10,7 +10,7 @@ interface UserAttributes {
 }
 
 interface UserCreationAttributes
-  extends Optional<UserAttributes, "id" | "profileImgUrl"> {}
+  extends Optional<UserAttributes, 'id' | 'profileImgUrl'> {}
 
 class UserModel
   extends Model<UserAttributes, UserCreationAttributes>
@@ -54,13 +54,13 @@ UserModel.init(
     },
   },
   {
-    tableName: "Users",
-    defaultScope: { attributes: { exclude: ["password"] } },
+    tableName: 'Users',
+    defaultScope: { attributes: { exclude: ['password'] } },
     scopes: {
       allData: { attributes: { exclude: [] } },
     },
     sequelize: todoSequelize,
-  }
+  },
 );
 
 export default UserModel;

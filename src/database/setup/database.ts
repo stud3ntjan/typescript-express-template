@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
+import { Dialect, Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -12,8 +12,8 @@ const todoSequelize = new Sequelize(
   DB_PASS,
   {
     host: DB_HOST,
-    dialect: DB_DIALECT as any, // Typzuweisung, um Typfehler zu vermeiden
-  }
+    dialect: DB_DIALECT as Dialect, // Typzuweisung, um Typfehler zu vermeiden
+  },
 );
 
 export default todoSequelize;
